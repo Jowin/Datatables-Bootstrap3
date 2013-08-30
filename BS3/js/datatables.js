@@ -4,7 +4,7 @@ $.extend( true, $.fn.dataTable.defaults, {
     "sPaginationType": "bootstrap",
     "oLanguage": {
         "sLengthMenu": "Show _MENU_ Rows",
-         "sSearch": ""
+        "sSearch": ""
     }
 } );
 /* Default class modification */
