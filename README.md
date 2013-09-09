@@ -1,9 +1,27 @@
 Datatables-Bootstrap3
 =====================
 
-Datatables plugin for BS3 RC1 and RC2
+Pagination types
+-------------------------------
 
-Forked and edited from following contributions :
+1. css/datatables.css
+2. js/datatables.js
 
-http://datatables.net/blog/Twitter_Bootstrap_2
-http://datatables.net/forums/discussion/16675/twitter-bootstrap-3
+Pagination types
+-------------------------------
+
+1. Normal:
+
+        $('.datatable').dataTable(); or $('.datatable').dataTable({"sPaginationType": "bs_normal"});	
+
+2. Two Buttons:
+
+        $('.datatable').dataTable({"sPaginationType": "bs_two_button"});
+		
+2. Four Buttons:
+
+        $('.datatable').dataTable({"sPaginationType": "bs_four_button"});
+		
+2. Full :
+
+        $('.datatable').dataTable({"sPaginationType": "bs_full"});
