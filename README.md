@@ -1,7 +1,7 @@
 Datatables-Bootstrap3
 =====================
 
-Pagination types
+Required files
 -------------------------------
 
 1. css/datatables.css
@@ -11,8 +11,9 @@ Pagination types
 -------------------------------
 
 1. Normal:
-
-        $('.datatable').dataTable(); or $('.datatable').dataTable({"sPaginationType": "bs_normal"});	
+		//Default Type
+        $('.datatable').dataTable(); 
+		$('.datatable').dataTable({"sPaginationType": "bs_normal"});	
 
 2. Two Buttons:
 
