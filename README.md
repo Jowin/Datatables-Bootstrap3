@@ -11,6 +11,7 @@ Pagination types
 -------------------------------
 
 1. Normal:
+
 		//Default Type
         $('.datatable').dataTable(); 
 		$('.datatable').dataTable({"sPaginationType": "bs_normal"});	
