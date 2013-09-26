@@ -1,11 +1,15 @@
 Datatables-Bootstrap3
 =====================
 
-Required files
+Quick Start
 -------------------------------
+Copy these files and the images inside assets to your project and include them in the page.
 
-1. css/datatables.css
-2. js/datatables.js
+1. assets/css/datatables.css
+2. assets/js/datatables.js
+3. assets/images/*  
+
+Please note : If you copy the images to a folder other than images in your project, be sure to update the image path in the datatables.css file.
 
 Pagination types
 -------------------------------
