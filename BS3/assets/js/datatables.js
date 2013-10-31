@@ -333,7 +333,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 						$('li:eq(-2)', an[i]).removeClass('disabled');
 					}
 					$(sList)
-						.insertBefore('li:eq(-2)', an[i])
+						.insertBefore($('li:eq(-2)', an[i]))
 						.bind('click', function (e) {
 							e.preventDefault();
 							oSettings._iDisplayStart = (parseInt($('a', this).text(),10)-1) * oPaging.iLength;
