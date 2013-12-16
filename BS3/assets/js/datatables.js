@@ -158,6 +158,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 				var oLang = oSettings.oLanguage.oPaginate;
 				var oClasses = oSettings.oClasses;
 				var fnClickHandler = function ( e ) {
+					e.preventDefault()
 					if ( oSettings.oApi._fnPageChange( oSettings, e.data.action ) )
 					{
 						fnCallbackDraw( oSettings );
