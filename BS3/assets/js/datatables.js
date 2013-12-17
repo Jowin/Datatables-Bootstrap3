@@ -77,8 +77,9 @@ $.extend( $.fn.dataTableExt.oPagination, {
 						.insertBefore( $('li:last', an[i])[0] )
 						.bind('click', function (e) {
 							e.preventDefault();
-							oSettings._iDisplayStart = (parseInt($('a', this).text(),10)-1) * oPaging.iLength;
-							fnDraw( oSettings );
+							if ( oSettings.oApi._fnPageChange(oSettings, parseInt($('a', this).text(),10)-1) ) {
+								fnDraw( oSettings );
+							}
 						} );
 				}
 				if ( oPaging.iPage === 0 ) {
@@ -157,6 +158,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 				var oLang = oSettings.oLanguage.oPaginate;
 				var oClasses = oSettings.oClasses;
 				var fnClickHandler = function ( e ) {
+					e.preventDefault()
 					if ( oSettings.oApi._fnPageChange( oSettings, e.data.action ) )
 					{
 						fnCallbackDraw( oSettings );
@@ -273,8 +275,9 @@ $.extend( $.fn.dataTableExt.oPagination, {
 				var an = oSettings.aanFeatures.p;
 				var fnBind = function (j) {
 					oSettings.oApi._fnBindAction( this, {"page": j+iStartButton-1}, function(e) {
-						oSettings.oApi._fnPageChange( oSettings, e.data.page );
-						fnCallbackDraw( oSettings );
+						if( oSettings.oApi._fnPageChange( oSettings, e.data.page ) ){
+							fnCallbackDraw( oSettings );
+						}
 						e.preventDefault();
 					} );
 				};
@@ -336,8 +339,9 @@ $.extend( $.fn.dataTableExt.oPagination, {
 						.insertBefore($('li:eq(-2)', an[i]))
 						.bind('click', function (e) {
 							e.preventDefault();
-							oSettings._iDisplayStart = (parseInt($('a', this).text(),10)-1) * oPaging.iLength;
-							fnCallbackDraw( oSettings );
+							if ( oSettings.oApi._fnPageChange(oSettings, parseInt($('a', this).text(),10)-1) ) {
+								fnCallbackDraw( oSettings );
+							}
 						});
 				}
 			}
