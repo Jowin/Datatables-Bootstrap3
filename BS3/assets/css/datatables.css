@@ -85,7 +85,7 @@ html[direction='rtl'] table.table thead .sorting_desc_disabled:after {
 	text-align: left;
 	float: left;
 }
-table.table thead .sorting:after { content: '\e150'; }
+table.table thead .sorting:after { content: '\e150'; opacity: 0.2; }
 table.table thead .sorting_asc:after { content: '\e155'; }
 table.table thead .sorting_desc:after { content: '\e156'; }
 table.table thead .sorting_asc_disabled:after { content: '\e155'; opacity: 0.2; }
