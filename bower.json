@@ -1,0 +1,16 @@
+{
+  "name": "Jowin/Datatables-Bootstrap3",
+  "version": "1.0.0",
+  "main": ["BS3/assets/css/datatables.css",
+    "BS3/assets/js/datatables.js"
+  ],
+  "description": "Plugin for Datatables Bootstrap3 UI Compatibility",
+  "license": "README.md",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "datatables": "1_9"
+  }
+}
