@@ -9,11 +9,14 @@
     /* Set the defaults for DataTables initialisation */
 	$.extend( true, $.fn.dataTable.defaults, {
 		"sDom": "<'row'<'col-sm-12'<'pull-right'f><'pull-left'l>r<'clearfix'>>>t<'row'<'col-sm-12'<'pull-left'i><'pull-right'p><'clearfix'>>>",
-	    "sPaginationType": "bs_normal",
-	    "oLanguage": {
-	        "sLengthMenu": "Show _MENU_ Rows",
-	        "sSearch": ""
-	    }
+		"sPaginationType": "bs_normal",
+		/* At the moment, this is the easiest way I could find to sneak these into oSettings without them getting wiped by _fnMap. */
+		"oLanguage": {
+			"sIconClassFirst": "glyphicon glyphicon-backward",
+			"sIconClassLast": "glyphicon glyphicon-forward",
+			"sIconClassPrevious": "glyphicon glyphicon-chevron-left",
+			"sIconClassNext": "glyphicon glyphicon-chevron-right"
+		}
 	} );
 
 	/* Default class modification */
@@ -50,8 +53,8 @@
 				};
 				$(nPaging).append(
 					'<ul class="pagination">'+
-						'<li class="prev disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;'+oLang.sPrevious+'</a></li>'+
-						'<li class="next disabled"><a href="#">'+oLang.sNext+'&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a></li>'+
+						'<li class="prev disabled"><a href="#"><span class="'+oSettings.oLanguage.sIconClassPrevious+'"></span>&nbsp;'+oLang.sPrevious+'</a></li>'+
+						'<li class="next disabled"><a href="#">'+oLang.sNext+'&nbsp;<span class="'+oSettings.oLanguage.sIconClassNext+'"></span></a></li>'+
 					'</ul>'
 				);
 				var els = $('a', nPaging);
@@ -116,8 +119,8 @@
 					}
 				};
 				var sAppend = '<ul class="pagination">'+
-					'<li class="prev"><a class="'+oSettings.oClasses.sPagePrevDisabled+'" tabindex="'+oSettings.iTabIndex+'" role="button"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;'+oLang.sPrevious+'</a></li>'+
-					'<li class="next"><a class="'+oSettings.oClasses.sPageNextDisabled+'" tabindex="'+oSettings.iTabIndex+'" role="button">'+oLang.sNext+'&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a></li>'+
+					'<li class="prev"><a class="'+oSettings.oClasses.sPagePrevDisabled+'" tabindex="'+oSettings.iTabIndex+'" role="button"><span class="'+oSettings.oLanguage.sIconClassPrevious+'"></span>&nbsp;'+oLang.sPrevious+'</a></li>'+
+					'<li class="next"><a class="'+oSettings.oClasses.sPageNextDisabled+'" tabindex="'+oSettings.iTabIndex+'" role="button">'+oLang.sNext+'&nbsp;<span class="'+oSettings.oLanguage.sIconClassNext+'"></span></a></li>'+
 					'</ul>';
 				$(nPaging).append( sAppend );
 				var els = $('a', nPaging);
@@ -174,10 +177,10 @@
 					};
 					$(nPaging).append(
 						'<ul class="pagination">'+
-						'<li class="disabled"><a  tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPageFirst+'"><span class="glyphicon glyphicon-backward"></span>&nbsp;'+oLang.sFirst+'</a></li>'+
-						'<li class="disabled"><a  tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPagePrevious+'"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;'+oLang.sPrevious+'</a></li>'+
-						'<li><a tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPageNext+'">'+oLang.sNext+'&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a></li>'+
-						'<li><a tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPageLast+'">'+oLang.sLast+'&nbsp;<span class="glyphicon glyphicon-forward"></span></a></li>'+
+						'<li class="disabled"><a  tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPageFirst+'"><span class="'+oSettings.oLanguage.sIconClassFirst+'"></span>&nbsp;'+oLang.sFirst+'</a></li>'+
+						'<li class="disabled"><a  tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPagePrevious+'"><span class="'+oSettings.oLanguage.sIconClassPrevious+'"></span>&nbsp;'+oLang.sPrevious+'</a></li>'+
+						'<li><a tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPageNext+'">'+oLang.sNext+'&nbsp;<span class="'+oSettings.oLanguage.sIconClassNext+'"></span></a></li>'+
+						'<li><a tabindex="'+oSettings.iTabIndex+'" class="'+oClasses.sPageButton+" "+oClasses.sPageLast+'">'+oLang.sLast+'&nbsp;<span class="'+oSettings.oLanguage.sIconClassLast+'"></span></a></li>'+
 						'</ul>'
 					);
 					var els = $('a', nPaging);

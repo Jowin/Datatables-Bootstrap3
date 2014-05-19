@@ -1,3 +1,17 @@
+# Fork info
+
+This fork has the following changes:
+
+  * Bidirectional CSS file to support both left-to-right and right-to-left layouts
+  * Control over pagination icon classes (for RTL support) via the following  `oLanguage` parameters:
+    * `sIconClassFirst` (default: `glyphicon glyphicon-chevron-backward`)
+    * `sIconClassLast` (default: `glyphicon glyphicon-chevron-forward`)
+    * `sIconClassPrevious` (default: `glyphicon glyphicon-chevron-left`)
+    * `sIconClassNext` (default: `glyphicon glyphicon-chevron-right`)
+  * Notes in the CSS on how to use Font Awesome for the sorting icons (hopefully better support is coming to upstream in 1.10 - see [this](https://github.com/DataTables/DataTables/issues/165))
+
+Note to self: Revisit all of this once 1.10 is released and see what can be thrown away.
+
 Datatables-Bootstrap3
 =====================
 
