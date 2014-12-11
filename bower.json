@@ -1,16 +1,23 @@
 {
-  "name": "Jowin/Datatables-Bootstrap3",
+  "name": "datatables-bootstrap3",
   "version": "1.0.0",
-  "main": ["BS3/assets/css/datatables.css",
+  "main": [
+    "BS3/assets/css/datatables.css",
+    "BS3/assets/images/sort_asc.png",
+    "BS3/assets/images/sort_asc_disabled.png",
+    "BS3/assets/images/sort_both.png",
+    "BS3/assets/images/sort_desc.png",
+    "BS3/assets/images/sort_desc_disabled.png",
     "BS3/assets/js/datatables.js"
   ],
   "description": "Plugin for Datatables Bootstrap3 UI Compatibility",
   "license": "README.md",
   "ignore": [
-    ".jshintrc",
-    "**/*.txt"
+    "BS3/examples/",
+    "BS3/Datatables.png",
+    "BS3/index.html"
   ],
   "dependencies": {
-    "datatables": "1_9"
+    "datatables": ">= 1.9.4"
   }
 }
