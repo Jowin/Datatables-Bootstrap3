@@ -85,7 +85,7 @@
 					for ( j=iStart ; j<=iEnd ; j++ ) {
 						sClass = (j==oPaging.iPage+1) ? 'class="active"' : '';
 						$('<li '+sClass+'><a href="#">'+j+'</a></li>')
-							.insertBefore( $('li:last', an[i])[0] )
+							.insertBefore( $('#' + oSettings.sTableId + '_paginate li:last', an[i])[0] )
 							.bind('click', function (e) {
 								e.preventDefault();
 								if ( oSettings.oApi._fnPageChange(oSettings, parseInt($('a', this).text(),10)-1) ) {
@@ -347,7 +347,7 @@
 							$('li:eq(-2)', an[i]).removeClass('disabled');
 						}
 						$(sList)
-							.insertBefore($('li:eq(-2)', an[i]))
+							.insertBefore($('#' + oSettings.sTableId + '_paginate li:eq(-2)', an[i]))
 							.bind('click', function (e) {
 								e.preventDefault();
 								if ( oSettings.oApi._fnPageChange(oSettings, parseInt($('a', this).text(),10)-1) ) {
