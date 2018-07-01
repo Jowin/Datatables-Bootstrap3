@@ -275,6 +275,7 @@
 						return;
 					}
 					var oPaging = oSettings.oInstance.fnPagingInfo();
+				console.log(oPaging)
 					var iPageCount = $.fn.dataTableExt.oPagination.iFullNumbersShowPages;
 					var iPageCountHalf = Math.floor(iPageCount / 2);
 					var iPages = Math.ceil((oSettings.fnRecordsDisplay()) / oSettings._iDisplayLength);
