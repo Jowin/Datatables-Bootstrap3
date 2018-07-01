@@ -46,6 +46,10 @@ Pagination types
 
         $('.datatable').dataTable({"sPaginationType": "bs_full"});
 
+5. Full Pages :
+
+        $('.datatable').dataTable({"sPaginationType": "bs_full_pages"});
+
 Note: These are extended pagination types without modifying the existing pagination types.
 		
 License
